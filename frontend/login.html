@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Tienda Hardware - Login</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <h1>Tienda Hardware</h1>
+          <p>Inicia sesión para entrar como <b>Cliente</b> o <b>Admin</b></p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="login.html">Login</a>
+        <a class="btn" href="index.html">Cliente</a>
+        <a class="btn primary" href="admin.html">Admin</a>
+      </div>
+    </div>
+
+    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+      <section class="card">
+        <header>
+          <div>
+            <h2>Iniciar sesión</h2>
+            <p class="hint">Te redirige automáticamente según tu rol</p>
+          </div>
+        </header>
+        <div class="content">
+          <div class="row" style="margin-bottom:12px">
+            <input id="email" class="input" placeholder="Email" style="flex:1; min-width:220px"/>
+            <input id="pass" class="input" placeholder="Password" type="password" style="flex:1; min-width:160px"/>
+          </div>
+          <div class="row" style="margin-bottom:12px">
+            <button id="btnLogin" class="btn good">Entrar</button>
+            <button id="btnLogout" class="btn">Cerrar sesión</button>
+            <span class="badge"><span class="dot warn"></span><span id="authState">Sin sesión</span></span>
+          </div>
+
+          <div class="pcard">
+            <h3 style="margin:0">Usuarios de prueba</h3>
+            <p style="margin:0; color:var(--muted); font-size:12px">
+              <b>Admin</b>: admin@tienda.com / Admin123*<br/>
+              <b>Cliente</b>: user@tienda.com / User123*
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <header>
+          <div>
+            <h2>Registro (Cliente)</h2>
+            <p class="hint">Crea cuenta como CLIENTE</p>
+          </div>
+        </header>
+        <div class="content">
+          <div class="row" style="margin-bottom:12px">
+            <input id="rNombre" class="input" placeholder="Nombre completo" style="flex:1; min-width:220px"/>
+          </div>
+          <div class="row" style="margin-bottom:12px">
+            <input id="rEmail" class="input" placeholder="Email" style="flex:1; min-width:220px"/>
+            <input id="rPass" class="input" placeholder="Password (min 6)" type="password" style="flex:1; min-width:160px"/>
+          </div>
+          <div class="row">
+            <button id="btnRegister" class="btn primary">Registrar</button>
+          </div>
+
+          <p style="margin-top:10px; color: var(--muted); font-size:12px">
+            * El registro crea un usuario CLIENTE.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="assets/js/login.js"></script>
+</body>
+</html>
