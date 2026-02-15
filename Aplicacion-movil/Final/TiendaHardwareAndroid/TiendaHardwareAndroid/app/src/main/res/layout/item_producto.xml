@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginBottom="10dp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+      android:id="@+id/txtTipo"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textStyle="bold"
+      android:textSize="18sp"/>
+
+    <TextView
+      android:id="@+id/txtMarca"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:alpha="0.85"/>
+
+    <TextView
+      android:id="@+id/txtCapacidad"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:alpha="0.75"/>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="space_between"
+      android:layout_marginTop="8dp">
+
+      <TextView
+        android:id="@+id/txtPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"/>
+
+      <TextView
+        android:id="@+id/txtStock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.85"/>
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/actionsRow"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="end"
+      android:layout_marginTop="10dp">
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddCart"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar"/>
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar"
+        android:layout_marginStart="8dp"/>
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDelete"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Baja"
+        android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+  </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

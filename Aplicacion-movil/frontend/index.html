@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Tienda Hardware - Cliente</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <h1>Tienda Hardware</h1>
+          <p id="subtitle">Cliente · Catálogo + Carrito (consume API)</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <input id="search" class="input" placeholder="Buscar: teclado, mouse, marca..." />
+        <button id="btnReload" class="btn">Recargar</button>
+        <a id="adminLink" class="btn primary" href="admin.html" style="display:none">Ir a Admin</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="card">
+        <header>
+          <div>
+            <h2>Productos</h2>
+            <p class="hint">Se obtiene de: <b>GET /api/productos</b></p>
+          </div>
+          <span class="badge"><span class="dot good"></span><span id="count">0</span> disponibles</span>
+        </header>
+
+        <div class="content">
+          <div id="products" class="products"></div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <header>
+          <div>
+            <h2>Carrito</h2>
+            <p class="hint">POST a <b>/api/ordenes</b> (requiere token)</p>
+          </div>
+          <span class="badge"><span class="dot"></span><span id="cartCount">0</span> items</span>
+        </header>
+
+        <div class="content">
+          <div class="row" style="margin-bottom:14px">
+            <span class="badge"><span class="dot warn"></span><span id="authState">Cargando sesión...</span></span>
+            <button id="btnLogout" class="btn">Logout</button>
+            <a class="btn" href="login.html">Cambiar cuenta</a>
+          </div>
+
+          <div id="cart"></div>
+
+          <div class="total">
+            <span>Total</span>
+            <span id="total">$0.00</span>
+          </div>
+
+          <div class="row" style="margin-top:12px">
+            <button id="btnCheckout" class="btn good" style="flex:1">Comprar</button>
+            <button id="btnClear" class="btn danger">Vaciar</button>
+          </div>
+
+          <p style="margin-top:10px; color: var(--muted); font-size:12px">
+            Usuarios de prueba:<br/>
+            <b>Admin</b>: admin@tienda.com / Admin123*<br/>
+            <b>Cliente</b>: user@tienda.com / User123*
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

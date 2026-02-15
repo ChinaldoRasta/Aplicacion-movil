@@ -1,0 +1,6 @@
+# Si Apache tiene mod_rewrite activo, esto permite /api/v1/... sin index.php en la URL
+RewriteEngine On
+RewriteBase /tienda_api_php/api/v1/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [QSA,L]
